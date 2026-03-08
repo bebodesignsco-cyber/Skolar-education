@@ -61,7 +61,8 @@ export default function Home() {
                     x: [item.x, item.x + 10, item.x]
                   }}
                   transition={{
-                    initial: { duration: 0.5, delay: 0.5 + item.delay },
+                    opacity: { duration: 0.5, delay: 0.5 + item.delay },
+                    scale: { duration: 0.5, delay: 0.5 + item.delay },
                     y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: item.delay },
                     x: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: item.delay }
                   }}

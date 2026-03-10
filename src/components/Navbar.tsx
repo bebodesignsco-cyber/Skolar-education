@@ -41,7 +41,6 @@ const features = [
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [userType, setUserType] = useState<"student" | "school">("student");
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
@@ -87,6 +86,18 @@ export const Navbar = () => {
           </DropdownMenu>
 
           <Link
+            href="/students"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          >
+            Students
+          </Link>
+          <Link
+            href="/teachers"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          >
+            Teachers
+          </Link>
+          <Link
             href="/pricing"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
@@ -102,29 +113,17 @@ export const Navbar = () => {
 
         {/* Actions */}
         <div className="hidden items-center gap-4 md:flex">
-          {/* Student/School Toggle */}
-          <div className="flex items-center rounded-full bg-muted p-1">
-            <button
-              onClick={() => setUserType("student")}
-              className={cn(
-                "rounded-full px-4 py-1 text-xs font-medium transition-all",
-                userType === "student" ? "bg-white text-primary shadow-sm" : "text-muted-foreground"
-              )}
-            >
-              Students
-            </button>
-            <button
-              onClick={() => setUserType("school")}
-              className={cn(
-                "rounded-full px-4 py-1 text-xs font-medium transition-all",
-                userType === "school" ? "bg-white text-primary shadow-sm" : "text-muted-foreground"
-              )}
-            >
-              Schools
-            </button>
-          </div>
-
-          <Button size="sm">Try Skolar Free</Button>
+          <Button 
+            size="sm" 
+            onClick={() => {
+              const heroSection = document.getElementById("hero-section");
+              if (heroSection) {
+                heroSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
+            Join Waitlist
+          </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -155,6 +154,20 @@ export const Navbar = () => {
             ))}
             <hr className="my-2" />
             <Link
+              href="/students"
+              className="text-sm font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Students
+            </Link>
+            <Link
+              href="/teachers"
+              className="text-sm font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Teachers
+            </Link>
+            <Link
               href="/pricing"
               className="text-sm font-medium"
               onClick={() => setIsMenuOpen(false)}
@@ -169,7 +182,18 @@ export const Navbar = () => {
               About
             </Link>
             <div className="mt-4 flex flex-col gap-2">
-              <Button className="w-full">Try Skolar Free</Button>
+              <Button 
+                className="w-full"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  const heroSection = document.getElementById("hero-section");
+                  if (heroSection) {
+                    heroSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Join Waitlist
+              </Button>
             </div>
           </div>
         </div>

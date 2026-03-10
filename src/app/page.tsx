@@ -8,6 +8,7 @@ import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calculator, BookOpen, Atom, Globe, FlaskConical } from "lucide-react";
 import { motion } from "framer-motion";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 export default function Home() {
   const floatingIcons = [
@@ -37,15 +38,10 @@ export default function Home() {
                 Ready to master your ATAR?
               </h2>
               <p className="text-xl text-white/80">
-                Join thousands of students across Australia using Skolar to improve their results.
+                Be among the first to experience the future of studying. Join the waitlist today.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <Button size="lg" variant="secondary" className="h-14 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98]">
-                  Try Skolar Free <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-bold border-white/40 hover:bg-white/10 text-white bg-transparent rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98]">
-                  For Schools
-                </Button>
+              <div className="flex flex-col items-center lg:items-start w-full">
+                <WaitlistForm variant="minimal" className="w-full max-w-md" />
               </div>
             </div>
 

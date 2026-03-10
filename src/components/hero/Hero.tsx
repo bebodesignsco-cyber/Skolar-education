@@ -7,6 +7,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { RiveMascot } from "./RiveMascot";
 import { useHeroParallax } from "./useHeroParallax";
 import LiquidBackground from "@/components/LiquidBackground";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 import { TrustedByBanner } from "../TrustedByBanner";
 
@@ -81,7 +82,7 @@ export const Hero = () => {
 
   return (
     <>
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-0 lg:pt-32 lg:pb-0">
+    <section id="hero-section" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-0 lg:pt-32 lg:pb-0">
       {/* Background Decor with Diagonal Mask */}
       <div 
         className="absolute inset-0 pointer-events-none"
@@ -110,25 +111,20 @@ export const Hero = () => {
               className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary mb-6"
             >
               <Sparkles className="w-4 h-4" />
-              <span>Next-gen AI Study Platform</span>
+              <span>Coming Soon: Next-gen AI Study Platform</span>
             </motion.div>
             
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.1]">
-              Australia&apos;s most <span className="text-primary">intelligent</span> AI study companion.
+              Be the first to experience <span className="text-primary">intelligent</span> learning.
             </h1>
             
             <p className="mt-6 max-w-xl text-lg text-gray-600 sm:text-xl leading-relaxed">
-              Unlock your academic potential with our AI-powered study companion. 
-              Built to help you master any subject with personalized feedback and practice.
+              Join the waitlist for Skolar's AI-powered study companion. 
+              Get early access to personalized feedback, practice exams, and smart flashcards.
             </p>
             
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start w-full sm:w-auto">
-              <Button size="lg" className="h-14 px-8 text-lg font-bold shadow-xl shadow-primary/20 bg-primary hover:bg-primary/90 rounded-2xl w-full sm:w-auto transition-all hover:scale-[1.02] active:scale-[0.98]">
-                Start Learning Free <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="h-14 px-8 text-lg font-semibold rounded-2xl w-full sm:w-auto hover:bg-gray-50 transition-all">
-                See how it works
-              </Button>
+            <div className="mt-10 w-full flex flex-col items-center lg:items-start">
+              <WaitlistForm className="w-full max-w-md" />
             </div>
 
           </motion.div>

@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../.cursor"
+		},
+		{
+			"path": "../.next"
+		},
+		{
+			"path": "../logos"
+		},
+		{
+			"path": "../node_modules"
+		},
+		{
+			"path": "../public"
+		},
+		{
+			"path": "../Skolar Animations"
+		},
+		{
+			"path": "../src"
+		}
+	],
+	"settings": {}
+}

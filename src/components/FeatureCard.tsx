@@ -2,9 +2,19 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { studentFeatures } from "@/lib/features-data";
+import type { LucideIcon } from "lucide-react";
 
-export const FeatureCard = ({ feature }: { feature: typeof studentFeatures[0] }) => {
+interface FeatureCardProps {
+  feature: {
+    title: string;
+    description: string;
+    icon: LucideIcon;
+    image: string;
+    slug?: string;
+  };
+}
+
+export const FeatureCard = ({ feature }: FeatureCardProps) => {
   const Icon = feature.icon;
 
   return (
